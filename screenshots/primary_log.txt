@@ -1,0 +1,50 @@
+root@ip-10-1-11-126:~# mysql -h database-1.cpwhocecbr6l.us-east-1.rds.amazonaws.com -u admin udacity -D admin123456 -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 89
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use udacity
+Database changed
+mysql> CREATE TABLE Employees (
+    ->     EmployeeID int,
+    ->     LastName varchar(255),
+    ->     FirstName varchar(255),
+    ->     Address varchar(255),
+    ->     City varchar(255)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> INSERT INTO Employees VALUES (1, 'Zane', 'James', 'New York', 'Ha Noi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM Employees
+    -> ^C
+mysql> ^C
+mysql> SELECT * FROM Employees;
++------------+----------+-----------+----------+--------+
+| EmployeeID | LastName | FirstName | Address  | City   |
++------------+----------+-----------+----------+--------+
+|          1 | Zane     | James     | New York | Ha Noi |
++------------+----------+-----------+----------+--------+
+1 row in set (0.00 sec)

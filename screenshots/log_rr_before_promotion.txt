@@ -1,0 +1,28 @@
+ubuntu@ip-10-2-11-48:~$ mysql -h secondaryreplicate.cwxh7sdupakx.us-west-2.rds.amazonaws.com -u admin udacity  -D admin123456 -p
+Enter password:
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 311
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ^C
+mysql> select * from Employees;
++------------+----------+-----------+----------+--------+
+| EmployeeID | LastName | FirstName | Address  | City   |
++------------+----------+-----------+----------+--------+
+|          1 | Zane     | James     | New York | Ha Noi |
++------------+----------+-----------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql>  INSERT INTO Employees VALUES (2, 'Zane', 'James', 'New York', 'Ha Noi');
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
